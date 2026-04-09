@@ -1,4 +1,5 @@
 import { AuthProvider } from "@/components/providers/auth-provider"
+import { PageTransition } from "@/components/providers/page-transition"
 import { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import { Toaster } from "@/components/ui/sonner"
@@ -63,7 +64,9 @@ export default function RootLayout({
                 <Header />
                 <main className="flex-1 px-4 py-8 sm:px-6 lg:px-8">
                   <div className="mx-auto w-full max-w-7xl">
-                    {children}
+                    <PageTransition>
+                      {children}
+                    </PageTransition>
                   </div>
                 </main>
                 <Footer />
